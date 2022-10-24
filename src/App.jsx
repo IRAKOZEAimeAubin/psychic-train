@@ -116,17 +116,17 @@ export default function App() {
   return (
     <Router>
       <Header
-        selectedTeam={selectedTeam}
-        teamMemberCount={employees.filter((employee) => employee.teamName === selectedTeam).length}
+        selectedTeam={ selectedTeam }
+        teamMemberCount={ employees.filter( ( employee ) => employee.teamName === selectedTeam ).length }
       />
       <Routes>
-        <Route path='/' element={<Employees
-            employees={employees}
-            selectedTeam={selectedTeam}
-            handleEmployeeCardClick={handleEmployeeCardClick}
-            handleTeamSelectionChange={handleTeamSelectionChange}
-          />}></Route>
-        <Route path='/GroupedTeamMembers' element={<GroupedTeamMembers />}></Route>
+        <Route path='/' element={ <Employees
+          employees={ employees }
+          selectedTeam={ selectedTeam }
+          handleEmployeeCardClick={ handleEmployeeCardClick }
+          handleTeamSelectionChange={ handleTeamSelectionChange }
+        /> }></Route>
+        <Route path='/GroupedTeamMembers' element={ <GroupedTeamMembers employees={ employees } selectedTeam={ selectedTeam } setTeam={ setTeam } /> }></Route>
       </Routes>
       <Footer />
     </Router>
