@@ -1,4 +1,5 @@
 import './App.css';
+import Nav from './Nav';
 import Header from './Header';
 import Employees from './Employees';
 import GroupedTeamMembers from './GroupedTeamMembers';
@@ -115,6 +116,7 @@ export default function App() {
 
   return (
     <Router>
+      <Nav />
       <Header
         selectedTeam={ selectedTeam }
         teamMemberCount={ employees.filter( ( employee ) => employee.teamName === selectedTeam ).length }
